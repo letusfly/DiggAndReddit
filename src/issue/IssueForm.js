@@ -13,16 +13,20 @@ export default class IssueForm extends Component{
     this.handleCreateIssue = this.handleCreateIssue.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
-  componentDidMount(){
-
-  }
-
+  /**
+  * handle input value is changed
+  *
+  * @event javascript event when input text was changed
+  */
   handleChange(event){
     if(event.target.value.length <= 255){
       this.setState({issueString : event.target.value});
     }
   }
+
+  /**
+  * to create issue, call method from IssueMain
+  */
   handleCreateIssue(){
     this.props.handleCreateIssue(this.state.issueString);
     this.setState({issueString:''});

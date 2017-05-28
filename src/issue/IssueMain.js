@@ -16,11 +16,18 @@ export default class IssueMain extends Component{
     this.handleUpdateVote = this.handleUpdateVote.bind(this);
     this.handleIssueListCallback = this.handleIssueListCallback.bind(this);
   }
-
-  componentDidMount(){
+  /**
+  * lifecycle method to initialize issue list data
+  */
+  componentWillMount(){
     Axios.get('/issue').then(this.handleIssueListCallback);
   }
-
+  /**
+  * callback function for all request
+  * handle response and setup list data
+  *
+  * @data list of issues
+  */
   handleIssueListCallback({data}){
     var rank = 1;
     for(let index in data){
@@ -29,7 +36,11 @@ export default class IssueMain extends Component{
 
     this.setState({list : data});
   }
-
+  /**
+  * to create issue, request to the server
+  *
+  * @issueContent : text content to create issue
+  */
   handleCreateIssue(issueContent){
 
     if(issueContent === ''){
@@ -39,7 +50,12 @@ export default class IssueMain extends Component{
     Axios.put('/issue', {text:issueContent}).then(this.handleIssueListCallback);
 
   }
-
+  /**
+  * to update voteCnt, request to the server
+  *
+  * @id : unique id for each issue
+  * @isUp : true|false if true than upvote o/w downvote
+  */
   handleUpdateVote(id, isUp){
     Axios.put('/issue/'+id, {isUp:isUp}).then(this.handleIssueListCallback);
   }
