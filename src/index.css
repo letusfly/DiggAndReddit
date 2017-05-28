@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.Issue-AppWrapper{
+  width : 100%;
+  text-align : -webkit-center;
+}
+.Issue-AppMain{
+  width: 720px;
+}
+.Issue-IssueList{
+  text-align : left;
+}
+.Issue-IssueForm-IssueLength {
+  text-align : right;
+  font-size : small;
+  color: rgb(127,127,127);
+}
+.Issue-IssueList-IssueRow{
+  display:flex;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  padding:5px 0px 5px 0px;
+}
+.Issue-IssueList-IssueRow-ranks{
+  width: 100px;
+  align-self: center
+}
+.Issue-IssueList-IssueRow-ranks-rank{
+  font-size: 30px;
+  font-weight: bold;
+}
+.Issue-IssueList-IssueRow-ranks-voteCnt{
+  color: rgb(127,127,127);
+}
+
+.Issue-IssueList-IssueRow-buttons{
+  width: 100px;
+  align-self: center
+}
+.Issue-IssueList-IssueRow-content{
+  width: calc(100% - 200px);
+  text-align: left;
+}
