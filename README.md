@@ -58,5 +58,11 @@ Render input box to create issue.
 Server side code with expressjs.
 Receive request, insert, update and sort.
 
+## Unit Test
+
+### `npm test`
+execute react-script test
+and Press 'a' to run all test.
+
 ## author
 adslxyz@gmail.com
